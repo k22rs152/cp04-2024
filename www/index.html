@@ -210,6 +210,10 @@
             $("#remain").html("経過時間:"+rest);
             analog(rest);
             }
+        if(rest<=0){
+            active=false;
+            alarm();
+        }
         
     } 
 
