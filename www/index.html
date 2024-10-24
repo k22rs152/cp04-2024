@@ -181,7 +181,12 @@
     // ButtonAがクリックされた時の処理
     function btnAClick(e){
         active=true;
-        startTime=new Date();
+        var t=startTime;
+        if(startTime>0){
+            startTime=t;
+        }else{
+            startTime=new Date();
+        }
         $("#btnA").prop("disbled",true);
     }
 
@@ -194,6 +199,7 @@
     // ButtonCがクリックされた時の処理
     function btnCClick(e){
         alarm();
+        startTime=0;
         active=false;
         period=60*parseInt($("#minute").val()) + parseInt($("#second").val());
         $("#time").html("経過時間:0"+"秒");
