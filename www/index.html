@@ -218,6 +218,11 @@
             $("#time").html("残り時間:"+etime+"秒");
             $("#remain").html("経過時間:"+rest+"秒");
             analog(rest);
+            if (rest <= 10) {
+                $("#remain").css("color", "black");
+            } else {
+                $("#remain").css("color", "red");
+            }
         }
         if(rest<=0){
             active=false;
